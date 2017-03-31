@@ -22,16 +22,16 @@
 </head>
 <body>
 	<table>
-		<c:forEach var="list" items="${data}">
-			<tr>
-				<td>${list.No}</td>
-				<td>${list.Name}</td>
-				<td>${list.Desc}</td>
-				<td>${list.DelYn}</td>
-				<td><button type="button" onclick="del('${list.No}')">삭제</button></td>
-				<td><button type="button" onclick="up('${list.No}','${list.Name}','${list.Desc}','${list.DelYn}')">수정</button></td>
+		<s:iterator value="data">
+		  <tr>
+				<td><s:property value="No"/></td>
+				<td><s:property value="Name"/></td>
+				<td><s:property value="Desc"/></td>
+				<td><s:property value="DelYn"/></td>
+				<td><button type="button" onclick="del('<s:property value="No"/>')">삭제</button></td>
+				<td><button type="button" onclick="up('<s:property value="No"/>','<s:property value="Name"/>','<s:property value="Desc"/>','<s:property value="DelYn"/>')">수정</button></td>
 			</tr>
-		</c:forEach>	
+		</s:iterator>	
 	</table>
 	<hr>
 	<s:form namespace="test" action="TestAction!insert" method="post" theme="simple">

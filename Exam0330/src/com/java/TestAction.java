@@ -42,10 +42,14 @@ public class TestAction implements Action {
 	
 	public HashMap<String, Object> setHashMap(){
 		map = new HashMap<String, Object>();
-		map.put("No", No);
-		map.put("Name", Name);
-		map.put("Desc", Desc);
-		map.put("DelYn", DelYn);
+		map.put("No", this.No);
+		map.put("Name", this.Name);
+		map.put("Desc", this.Desc);
+		map.put("DelYn", this.DelYn);
+//		this.No = "";
+//		this.Name = "";
+//		this.Desc = "";
+//		this.DelYn = "";
 		System.out.println(map);
 		return map;
 	}

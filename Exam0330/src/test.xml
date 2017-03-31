@@ -15,15 +15,15 @@
 		</action>
 		
 		<action name="updateTemp" class="com.java.TestAction" method="update">
-			<result type="chain">test</result>
+			<result type="redirectAction">test</result>
 		</action>
 		
 		<action name="deleteTemp" class="com.java.TestAction" method="delete">
-			<result type="chain">test</result>
+			<result type="redirectAction">test</result>
 		</action>
 		
 		<action name="*!*" class="com.java.{1}" method="{2}">
-			<result type="chain">test</result>
+			<result type="redirectAction">test</result>
 		</action>
     </package>
 

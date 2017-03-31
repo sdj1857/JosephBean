@@ -22,7 +22,7 @@
 </head>
 <body>
 	<table>
-		<c:forEach var="list" items="${data}">
+		<c:forEach var="list" items="${list}">
 			<tr>
 				<td>${list.No}</td>
 				<td>${list.Name}</td>
@@ -34,18 +34,18 @@
 		</c:forEach>	
 	</table>
 	<hr>
-	<form action="/Exam0330/test/insertTemp.action" method="post">
+	<form action="/Exam0330/board/insert.action" method="post">
 		No : <input type="text" name="No"><br>
 		Name : <input type="text" name="Name"><br>
 		Desc : <input type="text" name="Desc"><br>
 		DelYn : <input type="text" name="DelYn"><br>
 		<input type="submit" value="입력">
 	</form>
-	<form action="/Exam0330/test/deleteTemp.action" method="post" id="frD">
+	<form action="/Exam0330/board/delete.action" method="post" id="frD">
 		<input type="hidden" name="No" id="delNo">
 	</form>
 	<hr>
-	<form action="/Exam0330/test/updateTemp.action" method="post" id="frU" style="display: none;">
+	<form action="/Exam0330/board/update.action" method="post" id="frU" style="display: none;">
 		<input type="hidden" name="No" id="upNo"><br>
 		Name : <input type="text" name="Name" id="upName"><br>
 		Desc : <input type="text" name="Desc" id="upDesc"><br>
