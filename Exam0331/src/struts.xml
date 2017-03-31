@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<constant name="struts.action.extension" value="kkb"/>
+<!-- 	<constant name="struts.multipart.saveDir" value="E:/Project/workspase/Exam0331/WebContent/files/"/> -->
+	<constant name="struts.multipart.maxSize" value="10485760"/>
+	
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="index">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+    </package>
+    
+    <include file="struts2.xml"/>
+</struts>
