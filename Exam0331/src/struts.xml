@@ -13,7 +13,31 @@
         <action name="index">
             <result>/WEB-INF/jsp/index.jsp</result>
         </action>
+        
+<!--         <action name="test1" class="com.java.TestAction" method="execute"> -->
+<!--         	<result>/WEB-INF/jsp/test.jsp</result> -->
+<!--         </action> -->
+        
+<!--         <action name="test2" class="com.java.TestAction" method="execute2"> -->
+<!--         	<result>/WEB-INF/jsp/test.jsp</result> -->
+<!--         </action> -->
+        
+<!--         <action name="test3" class="com.java.TestAction" method="execute3"> -->
+<!--         	<result>/WEB-INF/jsp/test.jsp</result> -->
+<!--         </action> -->
+        
+<!--         <action name="test4" class="com.java.TestAction" method="execute4"> -->
+<!--         	<result>/WEB-INF/jsp/test.jsp</result> -->
+<!--         </action> -->
+        
+        <action name="*!*" class="com.java.{1}" method="{2}">
+        	<result>/WEB-INF/jsp/test.jsp</result>
+        </action>
     </package>
     
     <include file="struts2.xml"/>
 </struts>
+
+
+
+
