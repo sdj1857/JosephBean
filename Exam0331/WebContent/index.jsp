@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta HTTP-EQUIV="Refresh" CONTENT="0;URL=Exam0331/index.kkb">
+<meta HTTP-EQUIV="Refresh" CONTENT="0;URL=/Exam0331/TestAction!execute.kkb">
 <title>환영합니다.</title>
 </head>
 <body>

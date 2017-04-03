@@ -16,4 +16,20 @@ public class BoardDao {
 		SqlSession session = ssf.openSession(true);
 		return session.selectList("test.selectBoard");
 	}
+	
+	public int deleteBoard(int no) throws SQLException{
+		SqlSession session = ssf.openSession(true);
+		return session.update("test.deleteBoard", no);
+	}
+	public int insertBoard(HashMap<String,Object> map) throws SQLException{
+		SqlSession session = ssf.openSession(true);
+		int no = session.selectOne("test.selectNextNo");
+		map.put("no", no);
+		System.out.println(map);
+		return session.insert("test.insertBoard", map);
+	}
+	public int updateBoard(HashMap<String,Object> map) throws SQLException{
+		SqlSession session = ssf.openSession(true);
+		return session.update("test.updateBoard", map);
+	}
 }

@@ -7,6 +7,24 @@
   	SELECT *
 	FROM JAVA.BOARD
   </select>
+  <update id="deleteBoard" parameterType="int">
+  	UPDATE JAVA.BOARD
+  	SET DEL_YN = 'Y',
+  	    REG_USER = 'JAVA'
+  	WHERE NO = #{no}
+  </update>
+  <select id="selectNextNo" resultType="int">
+  	select (count(*) + 1) as no from java.board
+  </select>
+  <insert id="insertBoard" parameterType="hashmap">
+  	insert into java.board (NO, TITLE, CONTENT, REG_USER)
+  	values (#{no}, #{title}, #{content}, 'JAVA')
+  </insert>
+  <update id="updateBoard" parameterType="hashmap">
+  	UPDATE JAVA.BOARD
+  	SET TITLE = #{title}, CONTENT = #{content}, REG_USER = 'JAVA'
+  	WHERE NO = #{no}
+  </update>
 </mapper>
 
 
