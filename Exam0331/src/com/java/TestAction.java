@@ -37,7 +37,7 @@ public class TestAction implements Action {
 	@Override
 	public String execute() throws Exception {
 		System.out.println("execute()");
-		text = "execute";
+		text = "S";
 		Bdao = new BoardDao();
 		list = Bdao.selectBoard();
 		return SUCCESS;
@@ -50,10 +50,11 @@ public class TestAction implements Action {
 		int flag = Bdao.deleteBoard(no);
 		if(flag == 1){
 			text = "S";
+			list = Bdao.selectBoard();
 		}else {
 			text = "E";
 		}
-		return LOGIN;
+		return SUCCESS;
 	}
 	
 	public String insert() throws Exception {
@@ -65,10 +66,11 @@ public class TestAction implements Action {
 		int flag = Bdao.insertBoard(map);
 		if(flag == 1){
 			text = "S";
+			list = Bdao.selectBoard();
 		}else {
 			text = "E";
 		}
-		return INPUT;
+		return SUCCESS;
 	}
 	
 	public String update() throws Exception {
@@ -83,10 +85,11 @@ public class TestAction implements Action {
 		int flag = Bdao.updateBoard(map);
 		if(flag == 1){
 			text = "S";
+			list = Bdao.selectBoard();
 		}else {
 			text = "E";
 		}
-		return INPUT;
+		return SUCCESS;
 	}
 
 }

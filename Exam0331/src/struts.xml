@@ -30,10 +30,15 @@
 <!--         	<result>/WEB-INF/jsp/test.jsp</result> -->
 <!--         </action> -->
         
+        <action name="view">
+        	<result name="success">/WEB-INF/jsp/test2.jsp</result>
+        </action>
         <action name="*!*" class="com.java.{1}" method="{2}">
-        	<result name="success">/WEB-INF/jsp/test.jsp</result>
-        	<result name="input">/WEB-INF/jsp/result.jsp</result>
-        	<result type="json" name="login"/>
+        	<result name="success" type="json"/>
+        </action>
+        
+        <action name="json" class="com.java.JsonAction">
+        	<result type="json"/>
         </action>
     </package>
     
