@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- <meta HTTP-EQUIV="Refresh" CONTENT="0;URL=/Exam0331/view.kkb"> -->
+<meta HTTP-EQUIV="Refresh" CONTENT="0;URL=/LJH/login.ljh">
 <title>환영합니다.</title>
 </head>
 <body>
