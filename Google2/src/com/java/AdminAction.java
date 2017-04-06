@@ -49,6 +49,7 @@ public class AdminAction implements Action {
 		map.put("id", userId);
 		map.put("auth_id", authId);
 		aDao.insert(map);
+		mappingList = aDao.selectMappings(userId);
 		return SUCCESS;
 	}
 	
