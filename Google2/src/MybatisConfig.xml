@@ -18,5 +18,6 @@
   <mappers>
     <mapper resource="com/java/sql/google.xml"/>
     <mapper resource="com/java/sql/admin.xml"/>
+    <mapper resource="com/java/sql/menu.xml"/>
   </mappers>
 </configuration>
