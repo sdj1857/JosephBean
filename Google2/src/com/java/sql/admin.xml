@@ -29,5 +29,18 @@
 		ON (AUTH_MAPPING.AUTH_ID = AUTH.AUTH_ID
 		AND AUTH.DEL_YN = 'N')
 		WHERE AUTH_MAPPING.USER_ID = #{userId}
+		AND AUTH_MAPPING.DEL_YN = 'N'
 	</select>
+	
+	<insert id="insert" parameterType="hashmap">
+		INSERT INTO AUTH_MAPPING (USER_ID,AUTH_ID) 
+		VALUES (#{id},#{auth_id})
+	</insert>
+	
+	<update id="delete" parameterType="hashmap">
+		UPDATE AUTH_MAPPING 
+		SET DEL_YN = 'Y'
+		WHERE USER_ID = #{id}
+		AND AUTH_ID = #{auth_id}
+	</update>
 </mapper>

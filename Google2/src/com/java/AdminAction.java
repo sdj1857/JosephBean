@@ -8,7 +8,9 @@ import com.java.dao.AdminDao;
 import com.opensymphony.xwork2.Action;
 
 public class AdminAction implements Action {
-
+	
+	HashMap<String, Object> map;
+	
 	List<HashMap<String, Object>> userList, authList, mappingList;
 	public List<HashMap<String, Object>> getUserList() {
 		return userList;
@@ -19,11 +21,13 @@ public class AdminAction implements Action {
 	public List<HashMap<String, Object>> getMappingList() {
 		return mappingList;
 	}
-	String userId;
+	String userId,authId;
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
+	public void setAuthId(String authId) {
+		this.authId = authId;
+	}
 	@Override
 	public String execute() throws Exception {
 		AdminDao aDao = new AdminDao();
@@ -39,5 +43,23 @@ public class AdminAction implements Action {
 		mappingList = aDao.selectMappings(userId);
 		return SUCCESS;
 	}
+	public String insert() throws Exception {
+		AdminDao aDao = new AdminDao();
+		map = new HashMap<String, Object>();
+		map.put("id", userId);
+		map.put("auth_id", authId);
+		aDao.insert(map);
+		return SUCCESS;
+	}
+	
+	public String delete() throws Exception {
+		AdminDao aDao = new AdminDao();
+		map = new HashMap<String, Object>();
+		map.put("id", userId);
+		map.put("auth_id", authId);
+		aDao.delete(map);
+		mappingList = aDao.selectMappings(userId);
+		return SUCCESS;
 
+	}
 }

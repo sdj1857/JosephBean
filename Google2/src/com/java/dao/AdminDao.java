@@ -27,4 +27,14 @@ public class AdminDao {
 		return session.selectList("admin.selectMappings", userId);
 	}
 	
+	public int insert(HashMap<String, Object> map){
+		SqlSession session = ssf.openSession(true);
+		return session.insert("admin.insert", map);
+	}
+	
+	public int delete(HashMap<String, Object> map){
+		SqlSession session = ssf.openSession(true);
+		return session.update("admin.delete", map);
+	}
+	
 }
