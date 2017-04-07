@@ -37,4 +37,9 @@ public class AdminDao {
 		return session.update("admin.delete", map);
 	}
 	
+	public HashMap<String, Object> login(String email) throws SQLException{
+		SqlSession session = ssf.openSession(true);
+		return session.selectOne("admin.login", email);
+	}
+	
 }

@@ -17,16 +17,16 @@ public class MenuAction implements Action {
 	public List<HashMap<String, Object>> getMappingList() {
 		return mappingList;
 	}
-	String userId;
-	public void setUserId(String userId) {
-		this.userId = userId;
+	String email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	@Override
 	public String execute() throws Exception {
 		MenuDao mDao = new MenuDao();
 		mappingList = new ArrayList<HashMap<String, Object>>();
-		mappingList = mDao.selectMenu(userId);
+		mappingList = mDao.selectMenu(email);
 		AdminDao aDao = new AdminDao();
 		userList = new ArrayList<HashMap<String, Object>>();
 		userList = aDao.selectUsers();

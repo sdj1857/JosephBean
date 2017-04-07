@@ -43,4 +43,12 @@
 		WHERE USER_ID = #{id}
 		AND AUTH_ID = #{auth_id}
 	</update>
+	
+	
+	<select id="login" resultType="hashmap" parameterType="String">
+		SELECT *
+		FROM GOOGLE
+		WHERE DEL_YN = 'N'	
+		AND   EMAIL = #{email}
+	</select>
 </mapper>

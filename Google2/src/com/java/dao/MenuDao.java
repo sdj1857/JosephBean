@@ -12,9 +12,9 @@ import com.java.common.SqlMapClientManager;
 public class MenuDao {
 	public SqlSessionFactory ssf = SqlMapClientManager.getSession();
 	
-	public List<HashMap<String, Object>> selectMenu(String userId) throws SQLException{
+	public List<HashMap<String, Object>> selectMenu(String email) throws SQLException{
 		SqlSession session = ssf.openSession(true);
-		return session.selectList("menu.selectMenu", userId);
+		return session.selectList("menu.selectMenu", email);
 	}
 	
 }

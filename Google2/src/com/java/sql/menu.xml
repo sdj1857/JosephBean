@@ -11,7 +11,7 @@
 		INNER JOIN AUTH
 		ON (AUTH_MAPPING.AUTH_ID = AUTH.AUTH_ID
 		AND AUTH.DEL_YN = 'N')
-		WHERE AUTH_MAPPING.USER_ID = #{userId}
+		WHERE AUTH_MAPPING.USER_ID = (select distinct ID from google where email = #{email})
 		AND   AUTH_MAPPING.DEL_YN = 'N'
 	</select>
 </mapper>
